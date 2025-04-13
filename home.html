@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Manggala's Website</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/Luffy _ Desktop Wallpaper.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+    }
+
+    .menu button {
+      width: 200px;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    .menu button:hover {
+      background-color: #0056b3;
+    }
+
+    .profile {
+      margin-top: 20px;
+      color: #ff007f;
+      font-size: 1.5rem;
+    }
+
+    .features {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature {
+      background-color: #007bff;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      color: white;
+    }
+
+    .feature:hover {
+      background-color: #0056b3;
+    }
+
+    .images {
+      position: fixed;
+      z-index: 999;
+    }
+
+    .corner-images {
+      position: fixed;
+      width: 100px;
+      height: 100px;
+    }
+
+    .top-left { top: 20px; left: 20px; }
+    .top-right { top: 20px; right: 20px; }
+    .bottom-left { bottom: 20px; left: 20px; }
+    .bottom-right { bottom: 20px; right: 20px; }
+
+    button.logout-btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #dc3545;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    button.logout-btn:hover {
+      background-color: #c82333;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome, <span id="username"></span>!</h1>
+
+    <!-- Menu Navigasi -->
+    <div class="menu">
+      <button onclick="startChatbot()">Chatbot</button>
+      <button onclick="playWaifuVoice()">Waifu Voice</button>
+      <button onclick="playMusic()">Music</button>
+    </div>
+
+    <!-- Profile -->
+    <div class="profile">
+      <p>Username: <span id="user-profile"></span></p>
+      <p>Status: Online</p>
+    </div>
+
+    <!-- Fitur-Fitur Utama -->
+    <div class="features">
+      <div class="feature" onclick="startMiniGame()">
+        <h3>Mini Game</h3>
+        <p>Start a fun mini game.</p>
+      </div>
+      <div class="feature" onclick="startRPG()">
+        <h3>RPG</h3>
+        <p>Embark on an adventure!</p>
+      </div>
+      <div class="feature" onclick="openSettings()">
+        <h3>Settings</h3>
+        <p>Customize your preferences.</p>
+      </div>
+    </div>
+
+    <!-- Logout -->
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <div class="images">
+    <img class="corner-images top-left" src="pojok1.jpeg" alt="Top Left Image">
+    <img class="corner-images top-right" src="pojok2.jpeg" alt="Top Right Image">
+    <img class="corner-images bottom-left" src="pojok3.jpeg" alt="Bottom Left Image">
+    <img class="corner-images bottom-right" src="pojok4.jpeg" alt="Bottom Right Image">
+  </div>
+
+  <script>
+    // Menampilkan username dari localStorage
+    var username = localStorage.getItem('username');
+    if (username) {
+      document.getElementById('username').innerText = username;
+      document.getElementById('user-profile').innerText = username;
+    } else {
+      window.location.href = 'login.html'; // Jika tidak ada username, redirect ke login
+    }
+
+    // Logout function untuk menghapus session dan kembali ke login
+    function logout() {
+      localStorage.removeItem('username');
+      localStorage.removeItem('password');
+      window.location.href = 'login.html'; // Arahkan ke halaman login setelah logout
+    }
+
+    // Fitur Chatbot
+    function startChatbot() {
+      alert("Starting Chatbot...");
+      // Implementasikan fitur chatbot di sini
+    }
+
+    // Fitur Waifu Voice
+    function playWaifuVoice() {
+      alert("Playing Waifu Voice...");
+      var waifuVoice = new Audio('ganbare.mp3');
+      waifuVoice.play();
+    }
+
+    // Fitur Music
+    function playMusic() {
+      alert("Playing Music...");
+      var musicPlayer = new Audio('lofi.mp3');
+      musicPlayer.play();
+    }
+
+    // Fitur Mini Game
+    function startMiniGame() {
+      alert("Starting Mini Game...");
+      // Implementasikan mini game di sini
+    }
+
+    // Fitur RPG
+    function startRPG() {
+      alert("Starting RPG...");
+      // Implementasikan RPG di sini
+    }
+
+    // Fitur Settings
+    function openSettings() {
+      alert("Opening Settings...");
+      // Implementasikan pengaturan tema atau suara di sini
+    }
+  </script>
+
+</body>
+</html>

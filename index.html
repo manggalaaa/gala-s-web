@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Sign Up - Manggala's Website</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('images/Luffy _ Desktop Wallpaper.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6); 
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .options button {
+      width: 48%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Welcome to Manggala's Website</h1>
+    <p>Choose an action below:</p>
+
+    <!-- Login / Sign Up Buttons -->
+    <div class="options">
+      <button onclick="window.location.href='login.html'">Sign In</button>
+      <button onclick="window.location.href='register.html'">Sign Up</button>
+    </div>
+  </div>
+
+</body>
+</html>
